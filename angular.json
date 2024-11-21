@@ -7,9 +7,9 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true,
-          "inlineStyle": true,
-          "style": "scss",
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "style": "css",
           "standalone": true
         },
         "@schematics/angular:directive": {
@@ -109,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

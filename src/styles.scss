@@ -79,14 +79,78 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .gradient-bg {
+  position: relative;
   background: linear-gradient(
-    138deg,
-    var(--primary-darker-color) 0%,
-    var(--primary-color) 100%
-  );
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(5, 10, 20, 1) 50%,
+      rgba(0, 0, 0, 1)
+    ),
+    url('https://source.unsplash.com/1600x900/?galaxy,space,stars');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--white);
+  overflow: hidden; /* Ensure stars don’t overflow the container */
 }
+
+/* Layer 1: Large stars, darker and subtler */
+.gradient-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(200, 200, 255, 0.4) 2px, transparent 3px)
+    10px 10px,
+    radial-gradient(circle, rgba(200, 200, 255, 0.3) 1px, transparent 2px)
+    30px 30px;
+  background-size: 50px 50px;
+  opacity: 0.4;
+  animation: starsMove 60s linear infinite;
+  pointer-events: none;
+}
+
+/* Layer 2: Small, faint stars */
+.gradient-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(180, 180, 255, 0.3) 1px, transparent 2px)
+    5px 5px,
+    radial-gradient(circle, rgba(150, 150, 255, 0.2) 0.5px, transparent 1px)
+    20px 20px;
+  background-size: 30px 30px;
+  opacity: 0.3;
+  animation: starsTwinkle 5s linear infinite alternate;
+  pointer-events: none;
+}
+
+/* Twinkling animation for stars */
+@keyframes starsTwinkle {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Slow movement animation to simulate star drift */
+@keyframes starsMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-15%, -15%);
+  }
+}
+
 
 .spacer {
   flex: 1 1 auto;

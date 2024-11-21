@@ -8,6 +8,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Credentials } from 'src/app/shared/interfaces/credentials';
 import { passwordMatchesValidator } from '../utils/password-matches';
 import { RegisterStatus } from '../data-access/register.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -78,6 +79,7 @@ import { RegisterStatus } from '../data-access/register.service';
       >
         Submit
       </button>
+      <a routerLink="/auth/login">Login</a>
     </form>
   `,
   imports: [
@@ -87,6 +89,7 @@ import { RegisterStatus } from '../data-access/register.service';
     MatInputModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    RouterModule
   ],
   styles: [
     `
@@ -107,6 +110,12 @@ import { RegisterStatus } from '../data-access/register.service';
       mat-spinner {
         margin: 1rem 0;
       }
+      
+      a {
+        margin: 2rem;
+        color: var(--accent-darker-color);
+    }
+    
     `,
   ],
 })
