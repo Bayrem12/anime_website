@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const app = initializeApp(environment.firebase);
 
@@ -43,5 +44,5 @@ export const FIRESTORE = new InjectionToken('Firebase firestore', {
 });
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimations()],
+  providers: [provideRouter(routes), provideAnimations(), provideAnimationsAsync()],
 };

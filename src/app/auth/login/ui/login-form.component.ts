@@ -71,7 +71,7 @@ import { LoginStatus } from '../data-access/login.service';
       }
 
       button {
-        width: 100%;
+        width: 62%;
       }
 
       mat-error {

@@ -1,10 +1,117 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
+/* Overall header style */
+.anime-header {
+  background-color: #4a90e2; /* Calm, modern blue color */
+  color: white;
+  font-family: 'Arial', sans-serif; /* Clean font */
+  padding: 15px 20px;
+  border-radius: 0 0 5px 5px ;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures the header is always on top */
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 20px;
+}
 
-  mat-toolbar {
-    box-shadow: 0px -7px 11px 0px var(--accent-color);
-  }
+/* Navigation buttons */
+.nav-button {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Hover effect for navigation buttons */
+.nav-button:hover,
+.nav-button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #f39c12; /* Gold for highlight */
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Logout button styling */
+.logout-btn {
+ 
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  padding-right: 7px;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for logout button */
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: white;
+  color: #4a90e2; /* Blue color on hover */
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Spacer to push the logout button to the right */
+.spacer {
+  flex: 1;
+}
+
+/* Optional: If you want a specific background for the whole page */
+body {
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* Offset for the fixed header */
+}
+
+/* Container for content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsive design */
+/* Logo styling */
+span{
+  color: black;
+  font-weight:900;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: 20px;
+  padding-bottom:35px ;
+  cursor: pointer;
+}
+
+.logo-text {
+  font-family: 'Comic Sans MS', sans-serif; /* Anime-style font */
+  color: #f39c12; /* Gold color for the logo text */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+*{
+  height: 0;
+}

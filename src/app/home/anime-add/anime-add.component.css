@@ -1,0 +1,36 @@
+.anime-add-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .anime-add-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .anime-add-form input,
+  .anime-add-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .anime-add-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .anime-add-form button:hover {
+    background-color: #218838;
+  }
+  

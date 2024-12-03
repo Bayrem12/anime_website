@@ -1,0 +1,39 @@
+<div class="home-page">
+    
+  
+    <!-- featured Anime Releases -->
+    <section class="latest-releases">
+      <h2>Featured Anime</h2>
+      <div class="anime-list">
+        <mat-card *ngFor="let release of featuredAnime" class="anime-card">
+          <img mat-card-image [src]="release.image" [alt]="release.title" />
+          <mat-card-title class="t2">{{ release.title }}</mat-card-title>
+        </mat-card>
+      </div>
+    </section>
+    
+    <section class="latest-releases">
+      <h2>Latest Releases</h2>
+      <div class="anime-list">
+        <mat-card *ngFor="let release of latestReleases" class="anime-card">
+          <img mat-card-image [src]="release.image" [alt]="release.title" />
+          <mat-card-title class="t2" >{{ release.title }}</mat-card-title>
+          <mat-card-content>{{ release.description }}</mat-card-content>
+        </mat-card>
+      </div>
+    </section>
+  
+    <!-- Popular Anime Section -->
+    <section class="popular-anime">
+      <h2>Popular Anime</h2>
+      <div class="anime-list">
+        <mat-card *ngFor="let anime of popularAnime" class="anime-card">
+          <img mat-card-image [src]="anime.image" [alt]="anime.title" />
+          <mat-card-title class="t2">{{ anime.title }}</mat-card-title>
+        </mat-card>
+      </div>
+    </section>
+  
+    
+  </div>
+  

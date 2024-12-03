@@ -1,0 +1,67 @@
+
+  .contact-container {
+    max-width: 600px;
+    margin: 50px auto; /* Center the form */
+    background-color: #f9f9f9; /* Light background */
+    padding: 30px;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  .contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Darker text */
+    font-family: "Roboto", sans-serif;
+  }
+
+  .contact-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    font-family: "Arial", sans-serif;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease;
+  }
+
+  .contact-container input:focus,
+  .contact-container textarea:focus {
+    border-color: #ff9800; /* Highlight border on focus */
+    outline: none;
+  }
+
+  .contact-container button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff9800, #ef6c00); /* Button gradient */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded button */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-container button:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+  }
+
+  .contact-container button:disabled {
+    background: #ddd; /* Disabled button background */
+    color: #999; /* Disabled button text */
+    cursor: not-allowed; /* No pointer on disabled */
+  }

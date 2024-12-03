@@ -1,0 +1,31 @@
+<div class="anime-list">
+  <div
+    class="anime-card"
+    *ngFor="let anime of animeList"
+    (click)="selectAnime(anime)"
+  >
+    <img [src]="anime.image" [alt]="anime.name" />
+    <h2>{{ anime.name }}</h2>
+    <p>Status: {{ anime.state }}</p>
+    <button (click)="deleteAnime(anime.id)">Delete</button> <!-- Delete button -->
+  </div>
+</div>
+
+<!-- Add Anime Form -->
+<app-anime-add (animeAdded)="onAnimeAdded($event)"></app-anime-add>
+
+<!-- Anime Details Modal -->
+<div *ngIf="selectedAnime" class="anime-details">
+  <div class="anime-details-content">
+    <div class="anime-details-header">
+      <img [src]="selectedAnime.image" [alt]="selectedAnime.name" />
+      <div class="anime-details-text">
+        <h2>{{ selectedAnime.name }}</h2>
+        <p><strong>Rating:</strong> {{ selectedAnime.rate }}</p>
+        <p><strong>Status:</strong> {{ selectedAnime.state }}</p>
+      </div>
+    </div>
+    <p><strong>Description:</strong> {{ selectedAnime.description }}</p>
+    <button (click)="closeDetails()">Close</button>
+  </div>
+</div>

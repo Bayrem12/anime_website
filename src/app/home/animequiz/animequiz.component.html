@@ -1,0 +1,29 @@
+<div *ngIf="!quizEnded" class="quiz-container">
+    <h2 class="quiz-title">{{ currentQuestion.question }}</h2>
+    <ul class="options-list">
+      <li *ngFor="let option of currentQuestion.options">
+        <button class="option-button" (click)="answerQuestion(option)">
+          {{ option }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Result Popup Modal -->
+  <div id="resultModal" class="modal" *ngIf="quizEnded">
+    <div class="modal-content anime-style">
+      <span class="close" (click)="closeResultsPopup()">&times;</span>
+      <h2 class="quizComplet">Quiz Complete!</h2>
+      <p>Your score is: {{ score }}/{{ questions.length }}</p>
+      <div *ngIf="wrongAnswers.length > 0">
+        <h3 class="Incorrect" ><strong>Incorrect Answers:</strong></h3>
+        <ul>
+          <li *ngFor="let wrong of wrongAnswers">
+            <strong>Q:</strong> {{ wrong.question }} <br />
+            <strong class="Correct">Correct Answer:</strong> {{ wrong.correctAnswer }}
+          </li>
+        </ul>
+      </div>
+      <button class="restart-button" (click)="startQuiz()">Restart Quiz</button>
+    </div>
+  </div>

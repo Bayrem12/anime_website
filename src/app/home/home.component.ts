@@ -1,9 +1,9 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, effect, inject, OnInit } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../shared/data-access/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   templateUrl: './home.component.html',
@@ -14,9 +14,12 @@ import { Router } from '@angular/router';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    RouterOutlet,
+    RouterModule
   ],
   
 })
+
 export default class HomeComponent {
   authService = inject(AuthService);
   private router = inject(Router);
@@ -29,3 +32,4 @@ export default class HomeComponent {
     });
   }
 }
+

@@ -1,9 +1,32 @@
-<div class="container">
-    <mat-toolbar >
+
+
+<body>
+  <router-outlet></router-outlet>
+  <div class="container">
+    <!-- Head Bar -->
+    <mat-toolbar class="anime-header">
+      <!-- Logo with Name "Anime Hub" -->
+      <div class="logo">
+        <span class="logo-text"routerLink="">Anime<span>>Hub</span></span>
+      </div>
+  
+      <!-- Spacer for navigation alignment -->
       <span class="spacer"></span>
-      <button mat-icon-button (click)="authService.logout()">
+  
+      <!-- Navigation Links -->
+      <button mat-button class="nav-button" routerLink="animelist" >Anime List</button>
+      <button mat-button class="nav-button" routerLink="charcterlist">Character List</button>
+      <button mat-button class="nav-button" routerLink="animenews">Anime News</button>
+      <button mat-button class="nav-button" routerLink="quiz">anime quiz</button>
+      <button mat-button class="nav-button" routerLink="contact">Contact</button>
+      <button mat-button class="nav-button" routerLink="aboutus">About Us</button>
+      
+      
+      <!-- Logout Button -->
+      <button mat-icon-button (click)="authService.logout()" class="logout-btn">
         <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>
-    
   </div>
+  
+</body>

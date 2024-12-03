@@ -43,9 +43,9 @@ import { RouterModule } from '@angular/router';
         <mat-icon matPrefix>lock</mat-icon>
         @if (
           (registerForm.controls.password.dirty || form.submitted) &&
-          !registerForm.controls.password.valid
+          !registerForm.controls.password.valid && registerForm.controls.password.hasError('pattern')
         ) {
-          <mat-error>Password must be at least 8 characters long</mat-error>
+          <mat-error>Week Password</mat-error>
         }
       </mat-form-field>
       <mat-form-field>
@@ -79,7 +79,7 @@ import { RouterModule } from '@angular/router';
       >
         Submit
       </button>
-      <a routerLink="/auth/login">Login</a>
+  
     </form>
   `,
   imports: [
@@ -100,15 +100,16 @@ import { RouterModule } from '@angular/router';
       }
 
       button {
-        width: 100%;
+        width: 63%;
       }
 
       mat-error {
-        margin: 5px 0;
+        margin: 2px ;
       }
 
       mat-spinner {
         margin: 1rem 0;
+        
       }
       
       a {
@@ -128,7 +129,7 @@ export class RegisterFormComponent {
   registerForm = this.fb.nonNullable.group(
     {
       email: ['', [Validators.email, Validators.required]],
-      password: ['', [Validators.minLength(8), Validators.required]],
+      password: ['', [Validators.minLength(8), Validators.required,Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])/),]],
       confirmPassword: ['', [Validators.required]],
     },
     {

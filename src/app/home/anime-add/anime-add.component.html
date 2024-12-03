@@ -1,0 +1,58 @@
+<div class="anime-add-form">
+    <h2>Add New Anime</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Title:</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="newAnime.name"
+          name="name"
+          required
+        />
+      </div>
+      <div>
+        <label for="image">Image Link:</label>
+        <input
+          type="text"
+          id="image"
+          [(ngModel)]="newAnime.image"
+          name="image"
+          required
+        />
+      </div>
+      <div>
+        <label for="state">Status:</label>
+        <input
+          type="text"
+          id="state"
+          [(ngModel)]="newAnime.state"
+          name="state"
+          required
+        />
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          [(ngModel)]="newAnime.description"
+          name="description"
+          required
+        ></textarea>
+      </div>
+      <div>
+        <label for="rate">Rating:</label>
+        <input
+          type="number"
+          id="rate"
+          [(ngModel)]="newAnime.rate"
+          name="rate"
+          min="0"
+          max="10"
+          required
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
